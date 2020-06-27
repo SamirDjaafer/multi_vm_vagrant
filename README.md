@@ -1,30 +1,18 @@
-# Multi Machine Vagrant
+# Multi Virtual Machines
 
-## Timings
-
-120 - 180 Minutes
-
-## Summary
-
-The sample application has the ability to connect to a database. We need to provision our development environment with a vm for the database and one for the database.
-
-Vagrant is capable of running two or more virtual machines at once with different configurations.
-
-## Tasks
-
-* Research how to create a multi machine vagrant environment
-* Add a second virtual machine called "db" to your Vagrant file
-* Configure the db machine with a different IP from the app
-* Provision the db machine with a MongoDB database
+- 1 - First we configured our Vagrantfile to have 2 virtual machines running. We did this by adding another virtual machine inside of the `Vagrant.configure("2") do |config|` section
+```Vagrantfile
+config.vm.define "db" do |db|
+    db.vm.box = "ubuntu/xenial64"
+    db.vm.network "private_network", ip: "192.168.10.200"
+    db.vm.provision "shell", path: "environment/db/provision.sh", privileged: false
 
 
-## Notes
+  end
+``` 
 
-When you have the second machine running further configuration of the app is required to make it use the database. We will cover this in the next lesson.
+- 2 - Next we added a new provision script inside of the environment folder, we made a folder for db and put the provision shell script file in there.
 
-You can test your database is working correctly by running the test suite in the test folder. There are two sets of tests. One for the app VM and one for the db VM. Make them all pass.
+- 3 - Next we needed an environment variable for DB_HOST so we set that in our provision.sh file for our APP, Why the app? Well our DB_HOST variable is set inside the app, if we set it in the DB shell script then the app does not know what DB_HOST is, which defeats the purpose of setting it. We can test it out first to make sure it works by SSH into the app and setting it in the ~/bash.rc file.
 
-```
-cd test
-rake spec
-```
+- 4 - Now we know what the DB_HOST is we can now npm start and connect to the db through our app.

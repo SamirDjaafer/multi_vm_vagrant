@@ -21,9 +21,4 @@ config.vm.define "db" do |db|
 - Jenkins Test!
 - Jenkins Test !!
 - Jenkins Test !!!jenkins test
-testing testing
-ansible test 2
-yet another jenkins test
-yes yet another jenkins test
-et another jenkins test
 

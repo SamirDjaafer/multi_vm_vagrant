@@ -27,6 +27,9 @@ config.vm.define "db" do |db|
 new test for jenkins again! 3 new commit again!!!!!!!!!
 This should be visible on master if the build worked!!!!!!!!!!!!
 
+
+Jenkins test from AWS!!
+
 change
 test
 test

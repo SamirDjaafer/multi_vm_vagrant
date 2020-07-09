@@ -18,8 +18,29 @@ config.vm.define "db" do |db|
 - 4 - Now we know what the DB_HOST is we can now npm start and connect to the db through our app.
 
 
+
 - Jenkins Test!test
 
 
 
-!!!!
+- Jenkins Test!
+- Jenkins Test !!
+- Jenkins Test !!!jenkins test
+- Jenkins Test !!!jenkins test
+- Jenkins Test !!!jenkins test
+- Jenkins Test !!!jenkins test
+new test for jenkins again! 3 new commit again!!!!!!!!!
+This should be visible on master if the build worked!!!!!!!!!!!!
+
+
+Jenkins test from AWS!!!!!!!!!
+Jenkins test !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+change
+test
+test
+test
+test
+test
+test
+test
